@@ -1,10 +1,5 @@
-import os
-
-workspace_dir = "/content/ufdss"
-gitignore_path = os.path.join(workspace_dir, ".gitignore")
-
-gitignore_content = """# -------------------------------------------------------------------
-# Build artifacts & compiled objects
+# -------------------------------------------------------------------
+# Build artifacts & compiled objects (ignore contents, allow binary)
 # -------------------------------------------------------------------
 *.o
 *.obj
@@ -18,11 +13,23 @@ gitignore_content = """# -------------------------------------------------------
 *.cubin
 *.fatbin
 *.nvlog
-build/
+build/*
 lib/
 bin/
 obj/
 .deps/
+
+# -------------------------------------------------------------------
+# Commercial source code protection – keep these private
+# -------------------------------------------------------------------
+*.cu
+bls12_381_common.h
+
+# -------------------------------------------------------------------
+# Explicitly ALLOW the public API header and the compiled binary
+# -------------------------------------------------------------------
+!zk_bls_pub.h
+!build/libzk_bls_accel.so
 
 # -------------------------------------------------------------------
 # CUDA / NVCC intermediate files
@@ -130,9 +137,3 @@ temp/
 *.patch
 core
 *.core
-"""
-
-with open(gitignore_path, "w", encoding="utf-8") as f:
-    f.write(gitignore_content)
-
-print(f"Successfully updated optimal .gitignore at: {gitignore_path}")
