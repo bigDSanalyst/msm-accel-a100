@@ -1,0 +1,138 @@
+import os
+
+workspace_dir = "/content/ufdss"
+gitignore_path = os.path.join(workspace_dir, ".gitignore")
+
+gitignore_content = """# -------------------------------------------------------------------
+# Build artifacts & compiled objects
+# -------------------------------------------------------------------
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.ptx
+*.cubin
+*.fatbin
+*.nvlog
+build/
+lib/
+bin/
+obj/
+.deps/
+
+# -------------------------------------------------------------------
+# CUDA / NVCC intermediate files
+# -------------------------------------------------------------------
+*.cu.o
+*.cu.d
+*.cu.ptx
+*.cu.cubin
+*.cu.fatbin
+*.cu.*.reg
+*.cu.*.sm
+*.cu.*.nvcc*
+
+# -------------------------------------------------------------------
+# Python cache & virtual environments
+# -------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+*.log
+
+# -------------------------------------------------------------------
+# IDE & editor files
+# -------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.iml
+*.iws
+*.ipr
+.project
+.classpath
+.settings/
+.vs/
+
+# -------------------------------------------------------------------
+# LaTeX auxiliary files (keep only final PDF)
+# -------------------------------------------------------------------
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*_minted*
+epaper/*.pdf
+
+# Keep the final manuscript PDF
+!epaper/main.pdf
+
+# -------------------------------------------------------------------
+# Benchmark outputs & large data files
+# -------------------------------------------------------------------
+*.dat
+*.npy
+*.npz
+*.hdf5
+*.pkl
+*.json
+*.csv
+*.prof
+*.nsys-rep
+*.sqlite
+benchmarks/*.log
+benchmarks/*.txt
+
+# EXCEPTION: Keep our generated empirical scaling data
+!benchmarks/scaling_manifest.txt
+
+# -------------------------------------------------------------------
+# Temporary files
+# -------------------------------------------------------------------
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
+*.rej
+*.patch
+core
+*.core
+"""
+
+with open(gitignore_path, "w", encoding="utf-8") as f:
+    f.write(gitignore_content)
+
+print(f"Successfully updated optimal .gitignore at: {gitignore_path}")
