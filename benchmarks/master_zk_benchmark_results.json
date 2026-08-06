@@ -1,0 +1,20 @@
+{
+    "timestamp": "2026-08-05T14:58:10.127711",
+    "hardware": "NVIDIA A100-SXM4-40GB",
+    "library": "libzk_accel.so",
+    "status": "PASSED",
+    "metrics": {
+        "polynomial_multiplication": {
+            "degree": "2^20",
+            "coefficients": 1048576,
+            "execution_time_ms": 0.3243
+        },
+        "batched_msm": {
+            "streams": 4,
+            "points_per_stream": 1024,
+            "total_points": 4096,
+            "execution_time_ms": 0.1493,
+            "aggregate_throughput_pts_sec": 27440000.0
+        }
+    }
+}
