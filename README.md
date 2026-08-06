@@ -1,9 +1,12 @@
 # msm-accel-a100
 
+
+[![DOI](https://zenodo.org/logo/13245981.svg)](https://doi.org/10.5281/zenodo.21822506)
+
+
 A hardware-accelerated C++/CUDA implementation of Pippenger's algorithm for multi-scalar multiplication (MSM) over the BLS12-381 elliptic curve. This library is optimized specifically to maximize L2 cache residency and memory bandwidth saturation on NVIDIA A100 GPUs.
 
-**Maintainer:** Nicholas Clifford Maino ([maiknown@gmail.com](mailto:maiknown@gmail.com)
-(doi10.5281/zenodo.21822506))
+**Maintainer:** Nicholas Clifford Maino ([maiknown@gmail.com](mailto:maiknown@gmail.com))
 ---
 
 ## ⚖️ Important Licensing Notice
