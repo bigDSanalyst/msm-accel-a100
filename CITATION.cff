@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software in your research, please cite it using the following metadata."
+title: "msm-accel-a100: Hardware-Accelerated BLS12-381 Multi-Scalar Multiplication on A100 GPUs"
+authors:
+  - family-names: "Maino"
+    given-names: "Nicholas Clifford"
+    email: "maiknown@gmail.com"
+version: 1.0.0
+date-released: 2026-08-06
+url: "https://github.com/bigDSanalyst/msm-accel-a100"
